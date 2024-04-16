@@ -1,0 +1,20 @@
+services:
+  apex_ords:
+    # build: .
+    image: ddmitry80/apex_ords:0.01
+    container_name: apex_ords
+    environment:
+      "ORACLE_PWD": "E"
+    ports:
+      - "8521:1521"
+      - "8500:5500"
+      - "8023:8080"
+      - "9043:8443"
+      - "9922:22"
+    volumes:
+      - OracleDBData:/opt/oracle/oradata
+    tty: true
+    restart: unless-stopped
+
+volumes:
+  OracleDBData:
