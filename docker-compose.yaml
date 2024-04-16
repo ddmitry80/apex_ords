@@ -1,7 +1,7 @@
 services:
   apex_ords:
-    # build: .
-    image: ddmitry80/apex_ords:0.01
+    build: .
+    # image: ddmitry80/apex_ords:0.01
     container_name: apex_ords
     environment:
       "ORACLE_PWD": "E"
