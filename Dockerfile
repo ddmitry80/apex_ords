@@ -2,6 +2,7 @@ FROM container-registry.oracle.com/database/free:latest
 # FROM ddmitry80/apex_ords:0.01
 
 ENV ORACLE_PWD=E
+WORKDIR /home/oracle
 
 COPY unattended_apex_install_23c.sh /home/oracle
 COPY 00_start_apex_ords_installer.sh /opt/oracle/scripts/startup
