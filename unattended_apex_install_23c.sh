@@ -4,11 +4,11 @@
 start_time=$(date +%s)
 
 # Get APEX
-curl -o apex-latest.zip https://download.oracle.com/otn_software/apex/apex-latest.zip
+# curl -o apex-latest.zip https://download.oracle.com/otn_software/apex/apex-latest.zip
 
 # Enter APEX Folder
-unzip -q apex-latest.zip
-rm apex-latest.zip
+# unzip -q apex-latest.zip
+# rm apex-latest.zip
 cd apex
 
 # Install APEX
@@ -55,32 +55,32 @@ cp -r /home/oracle/apex/images /home/oracle/software/apex
 cd /home/oracle/
 
 # Install software
-su - <<EOF
-dnf update -y
-dnf install sudo -y
-dnf install nano -y
-dnf install java-17-openjdk -y
-EOF
+# su - <<EOF
+# dnf update -y
+# dnf install sudo -y
+# dnf install nano -y
+# dnf install java-17-openjdk -y
+# EOF
 
 # Modify sudoers
-su - <<EOF
-echo "Defaults !lecture" | sudo tee -a /etc/sudoers
-echo "oracle ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
-EOF
+# su - <<EOF
+# echo "Defaults !lecture" | sudo tee -a /etc/sudoers
+# echo "oracle ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+# EOF
 
 # Make ORDS Folders
-su - <<EOF
-mkdir /etc/ords
-mkdir /etc/ords/config
-mkdir /home/oracle/logs
-chmod -R 777 /etc/ords
-EOF
+# su - <<EOF
+# mkdir /etc/ords
+# mkdir /etc/ords/config
+# mkdir /home/oracle/logs
+# chmod -R 777 /etc/ords
+# EOF
 
 # Install ORDS
-su - <<EOF
-yum-config-manager --add-repo=http://yum.oracle.com/repo/OracleLinux/OL8/oracle/software/x86_64
-dnf install ords -y
-EOF
+# su - <<EOF
+# yum-config-manager --add-repo=http://yum.oracle.com/repo/OracleLinux/OL8/oracle/software/x86_64
+# dnf install ords -y
+# EOF
 
 # Configure ORDS
 su - <<EOF
