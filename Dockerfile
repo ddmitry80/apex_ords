@@ -1,5 +1,4 @@
 FROM container-registry.oracle.com/database/free:latest
-# FROM ddmitry80/apex_ords:0.01
 
 ENV ORACLE_PWD=E
 WORKDIR /home/oracle
